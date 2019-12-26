@@ -1,30 +1,52 @@
-@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Righteous&display=swap");
 
-
-* ,
-*::after ,
-*::before  {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-body{
-  overflow:hidden;
-  background-image: linear-gradient(to right, red , yellow);
-  
+body {
+  overflow: hidden;
+  font-family: "Righteous", cursive;
+  background-image: linear-gradient(to right, red, yellow);
 }
-.gameover{
-  position:absolute;
-  text-align:center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  font-size: 50px;
+
+
+.gameover {
+  position: absolute;
+  width: 100%;
+  font-size: 70px;
+  z-index: 1000;
+  padding-top:50px;
+  animation-name: over;
+  animation: over 8s;
+  -webkit-animation: over 8s;
 }
+@keyframes over {
+  0% {
+    left: -150%;
+  }
+  25% {
+    left: 0%;
+    opacity: 1;
+  }
+  50% {
+    left: 0%;
+    opacity: 0;
+  }
+  75% {
+    left: 0%;
+    opacity: 1;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
 #jeu {
-  font-family: 'Righteous', cursive;
   margin: 0;
   padding: 0;
   display: flex;
@@ -49,24 +71,48 @@ body{
   -moz-border-radius: 25px;
   -ms-border-radius: 25px;
   -o-border-radius: 25px;
+
 }
-#message{
-  font-family: 'Righteous', cursive;
+header {
+  position: fixed;
+  top: 0;
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+.message {
   position: absolute;
-  top: 10%;
-  left:47%;
-  transform: (-40, -47);
-  margin: auto;
-  text-align:center;
-  font-size:35px;
-  height:35px;
+  top: 20px;
+  width: 100%;
+  font-size: 45px;
   z-index: 2;
-  -webkit-transform: (-40, -47);
-  -moz-transform: (-40, -47);
-  -ms-transform: (-40, -47);
-  -o-transform: (-40, -47);
-  color: #930031;
+  animation-name: lev;
+  animation: lev 8s;
+  -webkit-animation: lev 8s;
 }
+@keyframes lev {
+  0% {
+    left: -150%;
+  }
+  25% {
+    left: 0%;
+    opacity: 1;
+  }
+  50% {
+    left: 0%;
+    opacity: 0;
+  }
+  75% {
+    left: 0%;
+    opacity: 1;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
 #bomberman {
   position: absolute;
   width: 50px;
@@ -84,7 +130,7 @@ body{
   height: 50px;
 }
 .bombe {
-position:absolute;
+  position: absolute;
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -181,101 +227,149 @@ position:absolute;
 }
 
 .spawn {
-
-    animation-name: blink2;
-    animation: blink2 1s reverse infinite;
-    -webkit-animation: blink2 1s reverse infinite;
+  animation-name: blink2;
+  animation: blink2 1s reverse infinite;
+  -webkit-animation: blink2 1s reverse infinite;
 }
 
-@keyframes blink2{
-    0% {
-        font-size:5px;
-        opacity: 0;
-    }
-    50% {
-        font-size:12px;
-        opacity:0.5;
-    }
-    100% {
-        font-size:50px;
-        opacity: 1
-    }
+@keyframes blink2 {
+  0% {
+    font-size: 5px;
+    opacity: 0;
+  }
+  50% {
+    font-size: 12px;
+    opacity: 0.5;
+  }
+  100% {
+    font-size: 50px;
+    opacity: 1;
+  }
 }
-#startUp{
+#startUp {
   font-size: 32px;
 }
-#level{
-  display:inline-block;
-  width:15%;
-  flex-direction:column;
-  justify-content:center;
-  display:flex;
-  margin:0;
-  padding:0;
+#level {
+  display: inline-block;
+  width: 15%;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  top: 15%;
   text-align: center;
   font-size: 40px;
-  border-radius:25px;;
-  -webkit-border-radius:25px;
-  -moz-border-radius:25px;
-  -ms-border-radius:25px;
-  -o-border-radius:25px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
 }
-#displayLevel{
-  text-align:center;
-  height:50px;
+#displayLevel {
+  text-align: center;
+  height: 50px;
 }
 
-#score{
-
-  width:15%;
-  flex-direction:column;
-  justify-content:center;
-  display:flex;
-  margin:0;
-  padding:0;
+#score {
+  width: 15%;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  margin: 0;
+  padding: 0;
   text-align: center;
   font-size: 40px;
-  border-radius:25px;;
-  -webkit-border-radius:25px;
-  -moz-border-radius:25px;
-  -ms-border-radius:25px;
-  -o-border-radius:25px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
 }
-#displayScore{
-
-  text-align:center;
-  height:50px;
-  
+#displayScore {
+  text-align: center;
+  height: 50px;
 }
 .ouille {
   position: absolute;
   width: 50px;
   height: 50px;
-
 }
-.aie{
-  font-size: 30px;
-  color:red;
+.aie {
+  font-size: 25px;
+  color: red;
 }
-.btn{
-  font-family: 'Righteous', cursive;
-  width: 150px;
-  height: 45px;
-  font-size: 30px;
-  border-radius:15px;;
-  -webkit-border-radius:15px;
-  -moz-border-radius:15px;
-  -ms-border-radius:15px;
-  -o-border-radius:15px;
-  box-shadow: 2px 2px 1px rgb(159, 159, 193);
+.settings {
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 auto;
+  top: 70%;
+  right: 5%;
+  width: 100px;
+  height: 250px;
+  font-size: 25px;
+  background-color: none;
 }
-footer{
-  font-family: 'Righteous', cursive;
+#speeds {
+  width: 50px;
+  height:30px;
+  display: block;
+}
+#lives {
+  width: 50px;
+  height:30px;
+  display: block;
+}
+input {
+  text-align: center;
+  padding: 0 auto;
+  margin: 0 auto;
+}
+.button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  font-size:30px;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.2s;
+  background:none;
+  width:230px;
+}
+.button:hover {
+  color: #000000;
+  background-color: #dccece;
+}
+footer {
   position: fixed;
   bottom: 0;
   margin: 0 auto;
   padding: 0 auto;
   text-align: center;
-  width:100%;
-  font-size:30px;
+  width: 100%;
+  font-size: 30px;
 }
+#btnStart{
+  width:280px;
+  font-size:25px;
+}
+#btnRestart {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  bottom: 60px;
+  padding: 0.35em 1.2em;
+}
+#btnRestart > .btnFlex {
+  flex: auto;
+}
+
+
+

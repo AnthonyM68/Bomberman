@@ -6,28 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Bomberman V1.0</title>
+    <title>Bomberman V2.0</title>
 </head>
 <body>
-    <div id="message" class="message">
-    </div>
-    <div id="jeu">
+    <header>
+        <div id="message"></div>
+        <div id="gameover"></div>
+    </header>
+    <div id="jeu">      
         <div id="level">Niveau:
             <div id="displayLevel">
             </div>
-                <div id="btn">
-                </div>
+            <div id="btn">
             </div>
+        </div>      
         <div id="plateau">
-            <div id="bomberman" class="bomberman">
+            <div id="bomberman" class="bomberman">                
             </div>
         </div>
-        <div id="score">Score:<div id="displayScore">
-        </div>
-        <div id="live"></div>
+        <div id="score">Score:
+            <div id="displayScore"></div>
+            <div id="live"></div>
+            <div id="setting"></div>
+            <div id="settings" class="settings" style="display:none";>
+                <label for="speed">Speed:</label><input id="speeds" type="text" name="speed" value="800">
+                <label for="lives">Live:</label><input id="lives" type="text" name="lives" value="6">
+            </div>
         </div>
     </div>
     <footer>
+        <div id="btnRestart"></div>      
         Developped By ANTHONY MONTMIRAIL @ACS 2019
     </footer>
     <script src="assets/js/bomberman.js"></script>
